@@ -70,7 +70,7 @@ If $\text{dist}[u] + \text{weight}(u, v) < \text{dist}[v]$ holds on pass $\vert{
 
 ```bash
 # Clone the repository
-git clone [https://github.com/shafeen-git/Citywide_Fiber_Optic_Backbone_Network.git](https://github.com/shafeen-git/Citywide_Fiber_Optic_Backbone_Network.git)
+git clone https://github.com/shafeen-git/Citywide_Fiber_Optic_Backbone_Network.git
 cd Citywide_Fiber_Optic_Backbone_Network
 
 # Run full metropolitan pipeline simulation
@@ -78,23 +78,3 @@ python main.py
 
 # Run the automated unit test suite
 python -m unittest discover tests
-
-
-## Project Structure
-
-Citywide_Fiber_Optic_Backbone_Network/
-├── algorithms/
-│   ├── __init__.py
-│   ├── knapsack.py       # 0/1 Knapsack DP capital allocation
-│   ├── resilience.py     # Tarjan's DFS and Edmonds-Karp max flow
-│   ├── routing.py        # Dijkstra (Min-Heap) and Bellman-Ford
-│   ├── scheduling.py     # Greedy interval activity selection
-│   └── topology.py       # Kruskal's MST with Disjoint Set Union
-├── tests/
-│   ├── __init__.py
-│   └── test_algorithms.py # Unit test coverage across all 7 algorithms
-├── models.py             # Data entities (Hub, CandidateEdge, Upgrades, Tasks)
-├── pipeline.py           # 3-Phase operational orchestrator
-├── main.py               # Metropolitan case study execution driver
-├── .gitignore
-└── README.md
