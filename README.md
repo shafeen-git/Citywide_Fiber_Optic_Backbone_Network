@@ -3,6 +3,8 @@
 > **CSE 4403: Algorithms Final Term Project**  
 > An end-to-end multi-phase algorithmic pipeline solving metropolitan infrastructure topology, real-time routing, fault resilience, and scheduled maintenance.
 
+**Team:** Shafeen Sufian Meead (230041206) · Adef Mahamat (230041219) · Abrar Naguib (230041229)
+
 ---
 
 ## 📌 Problem Overview
@@ -13,6 +15,16 @@ This engine orchestrates a suite of 7 classical algorithms divided across three 
 1. **Phase 1: Offline Topology Design & Capital Allocation** (Kruskal's MST + 0/1 Knapsack DP)
 2. **Phase 2: Online Shortest-Path & SLA Credit Verification** (Dijkstra + Bellman-Ford)
 3. **Phase 3: Contingency Simulation, Max-Flow Capacity & Scheduling** (Tarjan's DFS + Edmonds-Karp Max-Flow + Greedy Activity Selection)
+
+---
+
+## ✨ Key Features
+
+* **Zero Third-Party Dependencies:** Implemented strictly using the Python 3 standard library (`heapq`, `collections.deque`, `dataclasses`, `typing`, `unittest`).
+* **Multi-Phase Algorithmic Pipeline:** Seamlessly connects offline topology generation, online traffic routing, SLA pricing checks, fault contingency, and maintenance scheduling.
+* **Resilience & Cut-Contingency Simulation:** Proactively audits network cut-vertices and bridges via Tarjan's DFS and benchmarks maximum flow capacity before and after catastrophic link cuts.
+* **Peering SLA Arbitrage Verification:** Employs Bellman-Ford to ensure negative edge costs (carrier peering rebates) do not produce arbitrage feedback loops.
+* **Automated Test Coverage:** Includes unit testing across all 7 discrete algorithmic modules.
 
 ---
 
@@ -46,10 +58,31 @@ If $\text{dist}[u] + \text{weight}(u, v) < \text{dist}[v]$ holds on pass $\vert{
 
 ---
 
-## 🗂️ Project Structure
+## ⚙️ Environment & Tech Stack
 
-```text
-city_fiber_backbone/
+* **Language:** Python 3.10+ (Standard Library only)
+* **External Dependencies:** None (Zero external packages required)
+* **Environment Variables:** None; all network topologies, link capacities, and maintenance schedules run out-of-the-box with no `.env` or system configurations.
+
+---
+
+## 🚀 Running it
+
+```bash
+# Clone the repository
+git clone [https://github.com/shafeen-git/Citywide_Fiber_Optic_Backbone_Network.git](https://github.com/shafeen-git/Citywide_Fiber_Optic_Backbone_Network.git)
+cd Citywide_Fiber_Optic_Backbone_Network
+
+# Run full metropolitan pipeline simulation
+python main.py
+
+# Run the automated unit test suite
+python -m unittest discover tests
+
+
+## Project Structure
+
+Citywide_Fiber_Optic_Backbone_Network/
 ├── algorithms/
 │   ├── __init__.py
 │   ├── knapsack.py       # 0/1 Knapsack DP capital allocation
