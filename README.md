@@ -78,3 +78,32 @@ python main.py
 
 # Run the automated unit test suite
 python -m unittest discover tests
+```
+
+### The script prints, in order:
+1. **Phase 1 Output:** The minimal spanning tree links, calculated trenching costs, funded 0/1 knapsack upgrades, and total resilience gain.
+2. **Phase 2 Output:** Primary lowest-latency path (Dijkstra), peering SLA credit accumulation, and confirmation of no arbitrage cycles (Bellman-Ford).
+3. **Phase 3 Output:** Pre-cut Tarjan bridges/articulation nodes and baseline Max Flow; simulation of severed primary hospital link `HA <---> HH`, real-time BFS partition checks, dynamic rerouted path, post-cut Max Flow capacity preservation, and the greedy maintenance timetable.
+
+---
+
+## 🗂️ Project Structure
+
+```text
+Citywide_Fiber_Optic_Backbone_Network/
+├── algorithms/
+│   ├── __init__.py
+│   ├── knapsack.py       # 0/1 Knapsack DP capital allocation
+│   ├── resilience.py     # Tarjan's DFS and Edmonds-Karp max flow
+│   ├── routing.py        # Dijkstra (Min-Heap) and Bellman-Ford
+│   ├── scheduling.py     # Greedy interval activity selection
+│   └── topology.py       # Kruskal's MST with Disjoint Set Union
+├── tests/
+│   ├── __init__.py
+│   └── test_algorithms.py # Unit test coverage across all 7 algorithms
+├── models.py             # Data entities (Hub, CandidateEdge, Upgrades, Tasks)
+├── pipeline.py           # 3-Phase operational orchestrator
+├── main.py               # Metropolitan case study execution driver
+├── .gitignore
+└── README.md
+```
